@@ -1,2 +1,0 @@
-myers_triangle
-==============
