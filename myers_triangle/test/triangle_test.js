@@ -28,3 +28,8 @@ test("1-1-3の場合は二等辺三角形ではない。",
         function() {
             deepEqual(this.sut.type(1, 1, 3), NOT_TRIANGLE);
         });
+
+test("3-4-5の場合は三角形である。",
+        function() {
+            deepEqual(this.sut.type(3, 4, 5), TRIANGLE);
+        });

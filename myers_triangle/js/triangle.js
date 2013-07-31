@@ -1,4 +1,5 @@
 const NOT_TRIANGLE = -1;
+const TRIANGLE = 0;
 const EQUILATERAL = 1;
 const ISOSCELES = 2;
 
@@ -13,6 +14,9 @@ MyersTriangle.prototype = {
         }
         if(this.isIsosceles(a, b, c)) {
             return ISOSCELES;
+        }
+        if(this.isTriangle(a, b, c)) {
+            return TRIANGLE;
         }
         return NOT_TRIANGLE;
     },
@@ -38,6 +42,13 @@ MyersTriangle.prototype = {
             if(x + y > z) {
                 return true;
             }
+        }
+        return false;
+    },
+    
+    isTriangle : function(a, b, c) {
+        if((a < b + c) && (b < c + a) && (c < a + b)) {
+            return true;
         }
         return false;
     }
