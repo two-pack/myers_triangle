@@ -11,7 +11,9 @@ MyersTriangle.prototype = {
         if(a == b && b == c) {
             return EQUILATERAL;
         }
-        if(this.isIsosceles(a, b, c)) {
+        if(this.isIsosceles(a, b, c) ||
+           this.isIsosceles(b, c, a) ||
+           this.isIsosceles(c, a, b)) {
             return ISOSCELES;
         }
         return NOT_TRIANGLE;
@@ -20,16 +22,6 @@ MyersTriangle.prototype = {
     isIsosceles : function(a, b, c) {
         if(a == b) {
             if(a + b > c) {
-                return true;
-            }
-        }
-        if(b == c) {
-            if(b + c > a) {
-                return true;
-            }
-        }
-        if(c == a) {
-            if(c + a > b) {
                 return true;
             }
         }
