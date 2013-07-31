@@ -13,3 +13,13 @@ test("2-2-1の場合は二等辺三角形を返す。",
         function() {
             deepEqual(this.sut.type(2, 2, 1), ISOSCELES);
         });
+
+test("2-1-2の場合は二等辺三角形を返す。",
+        function() {
+            deepEqual(this.sut.type(2, 1, 2), ISOSCELES);
+        });
+
+test("1-2-2の場合は二等辺三角形を返す。",
+        function() {
+            deepEqual(this.sut.type(1, 2, 2), ISOSCELES);
+        });
