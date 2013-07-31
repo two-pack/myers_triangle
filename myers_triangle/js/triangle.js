@@ -8,7 +8,7 @@ var MyersTriangle = function(model) {
 
 MyersTriangle.prototype = {
     type : function(a, b, c) {
-        if(a == b && b == c) {
+        if(this.isEquilateral(a, b, c)) {
             return EQUILATERAL;
         }
         if(this.isIsosceles(a, b, c)) {
@@ -17,6 +17,13 @@ MyersTriangle.prototype = {
         return NOT_TRIANGLE;
     },
     
+    isEquilateral : function(a, b, c) {
+        if(a == b && b == c) {
+            return true;
+        }
+        return false;
+    },
+
     isIsosceles : function(a, b, c) {
         if(this.isIsoscelesXeqY(a, b, c) ||
            this.isIsoscelesXeqY(b, c, a) ||
