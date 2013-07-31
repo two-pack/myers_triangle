@@ -33,3 +33,8 @@ test("3-4-5の場合は三角形である。",
         function() {
             deepEqual(this.sut.type(3, 4, 5), TRIANGLE);
         });
+
+test("1-4-6の場合は三角形ではない。",
+        function() {
+            deepEqual(this.sut.type(1, 4, 6), NOT_TRIANGLE);
+        });
